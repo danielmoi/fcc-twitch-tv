@@ -30,7 +30,7 @@ function getData() {
           echo(response);
             var logo = response.logo ? response.logo : 'http://dummyimage.com/50x50/ecf0e7/5c5457.jpg&text=0x3F',
                 name = response.name ? response.name : value,
-                game = (status === 'online') ? response.game : '',
+                game = (status === 'online') ? '<i class="fa fa-video-camera"></i> ' + response.game : '',
                 url = (status !== 'account closed') ? response.url : '#',
               html = '<div class="row user ' + status + '"><a href="' + url + '" target="_blank">' 
             
