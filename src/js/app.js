@@ -7,39 +7,38 @@ var arrChannels = ['freecodecamp', 'trick2g', 'c9sneaky', 'storbeck', 'terakilob
 
 var arrStatus = [];
 
-var getStatus = function () {
-  $.each(arrChannels, function (index, value) {
-    $.ajax({
-        url: 'https://api.twitch.tv/kraken/streams/' + value,
-        dataType: 'json'
-      })
-      .always(function (response) {
-        arrStatus.push(response);
-        echo('always for status');
-      });
 
-  });
-};
+$.each(arrChannels, function (index, value) {
+  $.ajax({
+      url: 'https://api.twitch.tv/kraken/streams/' + value,
+      dataType: 'json'
+    })
+    .always(function (response) {
+      arrStatus.push(response);
+      echo('always for status');
+    });
+
+});
 
 
 var arrDetails = [];
 
-var getDetails = function () {
-  $.each(arrChannels, function (index, value) {
-    $.ajax({
-        url: 'https://api.twitch.tv/kraken/channels/' + value,
-        dataType: 'json'
-      })
-      .always(function (response) {
-        arrDetails.push(response);
-        echo('always for details');
-      });
 
-  });
-};
+$.each(arrChannels, function (index, value) {
+  $.ajax({
+      url: 'https://api.twitch.tv/kraken/channels/' + value,
+      dataType: 'json'
+    })
+    .always(function (response) {
+      arrDetails.push(response);
+      echo('always for details');
+    });
+
+});
 
 
-$.when.apply($, getStatus(), getDetails())
-  .then(function (response1, response2) {
+
+$.when.apply($, arrStatus, arrDetails)
+  .done(function (response1, response2) {
     echo('all done');
   });
