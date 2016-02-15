@@ -18,7 +18,11 @@ body {
   font-size: 14px;
   height: 100%;
   background: gray;
-  color: white;
+  color: #6441a5;
+}
+
+a {
+  color: #6441a5;
 }
 
 .header {
@@ -29,4 +33,10 @@ body {
 .container {
   max-width: 50%;
   margin: 0 auto;
+}
+
+.user {
+  padding: 10px 0;
+  margin: 10px 0;
+  background: #e2d4fd;
 }

@@ -15,7 +15,9 @@ body {
 
 // TYPOGRAPHY 
 
-
+a {
+  color: $primary;
+}
 
 
 // SECTIONS
@@ -30,7 +32,11 @@ body {
   margin: 0 auto;
 }
 
-
+.user {
+  padding: 10px 0;
+  margin: 10px 0;
+  background: $tertiary;
+}
 
 
 // ELEMENTS

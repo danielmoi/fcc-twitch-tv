@@ -7,4 +7,11 @@ $lightbrown: antiquewhite;
 $pink: #f94877;
 
 $background: gray;
-$text-primary: white;
+
+$primary: #6441a5; // dark purple
+$secondary: #a68ed2; // light purple
+$tertiary: #e2d4fd; // very light purple
+
+$text-primary: $primary;
+$text-secondary: darkgray;
+$text-tertiary: white;
