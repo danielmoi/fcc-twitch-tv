@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-html, 
+html,
 body {
   margin: 0;
   padding: 0;
@@ -13,31 +13,56 @@ body {
   color: $text-primary;
 }
 
-// TYPOGRAPHY 
+.img-full {
+  width: 100%;
+}
 
+// TYPOGRAPHY 
 a {
   color: $primary;
 }
 
-
 // SECTIONS
-
 .header {
   margin-top: 30px;
   text-align: center;
 }
 
 .container {
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
+  padding: 10px;
+  background: white;
+  margin-bottom: 50px;
 }
 
 .user {
   padding: 10px 0;
   margin: 10px 0;
   background: $tertiary;
+  &:hover {
+    border: 1px solid $primary;
+    cursor: pointer;
+  }
 }
 
+.status {
+  color: $text-secondary;
+}
+
+.online {
+  background: $primary;
+  color: white;
+  a {
+    color: white;
+  }
+  .status {
+    color: white;
+  }
+  .game {
+    font-style: italic;
+    color: $secondary;
+  }
+}
 
 // ELEMENTS
-

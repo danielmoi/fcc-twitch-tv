@@ -32,14 +32,14 @@ function getData() {
                 name = response.name ? response.name : value,
                 game = (status === 'online') ? response.game : '',
                 url = (status !== 'account closed') ? response.url : '#',
-              html = '<div class="row user">' 
+              html = '<div class="row user ' + status + '"><a href="' + url + '" target="_blank">' 
             
             + '<div class="col-xs-2 logo">'
-            + '<img src="' + logo + '" class="img-responsive">'
+            + '<img src="' + logo + '" class="img-full">'
             + '</div>'
             
             + '<div class="col-xs-4 name">'
-            + '<p class="name"><a href="' + url + '">' + name + '</a></p>'
+            + '<p class="name"><a href="' + url + '" target="_blank">' + name + '</a></p>'
             + '</div>'
             
             + '<div class="col-xs-6 status">'
@@ -47,7 +47,7 @@ function getData() {
             + '<p class="game">' + game + '</p>'
             + '</div>'
             
-            + '</div>';
+            + '</a></div>';
             $('#one').append(html);
 
 

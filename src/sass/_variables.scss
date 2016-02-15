@@ -6,12 +6,12 @@ $darkbrown: burlywood;
 $lightbrown: antiquewhite;
 $pink: #f94877;
 
-$background: gray;
+$background: lightgray;
 
 $primary: #6441a5; // dark purple
 $secondary: #a68ed2; // light purple
 $tertiary: #e2d4fd; // very light purple
 
 $text-primary: $primary;
-$text-secondary: darkgray;
-$text-tertiary: white;
+$text-secondary: gray;
+$text-tertiary: $secondary;
