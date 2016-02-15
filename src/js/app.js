@@ -7,25 +7,39 @@ var arrChannels = ['freecodecamp', 'trick2g', 'c9sneaky', 'storbeck', 'terakilob
 
 var arrStatus = [];
 
-var getData = function () {
+var getStatus = function () {
+  return arrChannels.forEach(function (element) {
+    $.ajax({
+        url: 'https://api.twitch.tv/kraken/streams/' + element,
+        dataType: 'json'
+      })
+      .always(function (response) {
+        arrStatus.push(response);
+        echo('always');
+      });
+
+  });
+};
+
+
+var arrDetails = [];
+
+var getDetails = function () {
   arrChannels.forEach(function (element) {
     $.ajax({
         url: 'https://api.twitch.tv/kraken/channels/' + element,
         dataType: 'json'
       })
       .always(function (response) {
-        arrStatus.push(response);
+        arrDetails.push(response);
         echo('always');
-      })
-      .then(
-        function (reponse) {
-          echo('done');
-        },
-        function (response) {
-          echo('fail')
-        });
-  });
+      });
 
+  });
 };
 
-getData();
+
+$.when.apply($, getStatus, getDetails)
+  .done(function (response1, response2) {
+  echo('all done');
+});
