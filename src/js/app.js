@@ -3,7 +3,7 @@ function echo(obj) {
 }
 window.echo = console.log.bind(console);
 
-var arrChannels = ['freecodecamp', 'lirik', 'trick2g', 'c9sneaky', 'storbeck', 'terakilobyte', 'brunofin', 'comster404', 'test_channel'];
+var arrChannels = ['freecodecamp', 'lirik', 'trick2g', 'c9sneaky', 'storbeck', 'terakilobyte', 'brunofin', 'comster404', 'test_channel', 'esl_sc2'];
 
 
 function getData() {
@@ -32,7 +32,8 @@ function getData() {
                 name = response.name ? response.name : value,
                 game = (status === 'online') ? '<i class="fa fa-video-camera"></i> ' + response.game : '',
                 url = (status !== 'account closed') ? response.url : '#',
-              html = '<div class="row user ' + status + '"><a href="' + url + '" target="_blank">' 
+              html = '<div class="row user ' + status + '">'
+            
             
             + '<div class="col-xs-2 logo">'
             + '<img src="' + logo + '" class="img-full">'
@@ -47,8 +48,8 @@ function getData() {
             + '<p class="game">' + game + '</p>'
             + '</div>'
             
-            + '</a></div>';
-            $('#one').append(html);
+            + '</div>';
+            $('#one').append('<a href="' + url + '" target="_blank">' + html + '</a>');
 
 
           });
@@ -57,5 +58,16 @@ function getData() {
 }
 
 
-
-getData();
+$(document).ready(function() {
+  getData();
+  $('#online').click(function() {
+    $('#online').addClass('active');
+    $('#all').removeClass('active');
+    $('.offline, .account').hide();
+  });
+  $('#all').click(function() {
+    $('#all').addClass('active');
+    $('#online').removeClass('active');
+    $('.offline, .account').show();
+  });
+});
